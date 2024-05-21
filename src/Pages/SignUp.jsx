@@ -75,10 +75,10 @@ const SignUp = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary">Register</button>
+                        <button type="submit" className="bg-red-500 btn btn-primary">Register</button>
                     </form>
                     <p className='container my-2'>Already have an account?</p>
-                    <Link to='/login' className="btn btn-secondary">Login</Link>
+                    <Link to='/login' className=" btn btn-secondary">Login</Link>
                 </div>
             </div>
         </div>

@@ -103,7 +103,7 @@ function Dashboard() {
 
   return (
     <>
-      <Card className="h-full w-full">
+      <Card className="h-full w-full bg-orange-300">
         <CardHeader floated={false} shadow={false} className="rounded-none">
           <div className="flex items-center justify-between mb-4 ">
             <div className="w-1/3">
@@ -155,27 +155,27 @@ function Dashboard() {
                 {TABLE_HEAD.map((head) => (
                   <th
                     key={head}
-                    className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                    className="border-y border-blue-gray-100 bg-blue-500 p-4"
                   >
                     <Typography
                       variant="small"
-                      color="blue-gray"
+                      color="black-gray"
                       className="font-normal leading-none opacity-70"
                     >
                       {head}
                     </Typography>
                   </th>
                 ))}
-                <th className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"></th>{" "}
+                <th className="border-y border-blue-gray-100 bg-blue-500 p-4"></th>{" "}
               </tr>
             </thead>
             <tbody>
               {filteredDNSRecords.length > 0 ? (
                 filteredDNSRecords.map((record, index) => (
                   <tr key={index}>
-                    <td className="p-4">{record.Name}</td>
-                    <td className="p-4">{record.Type}</td>
-                    <td className="p-4">{record.ResourceRecords[0].Value}</td>
+                    <td className="p-4 ">{record.Name}</td>
+                    <td className="p-4 ">{record.Type}</td>
+                    <td className="p-4 ">{record.ResourceRecords[0].Value}</td>
                     <td className="p-4">
                       <div className="flex gap-2">
                         <Button
@@ -188,7 +188,7 @@ function Dashboard() {
                         <Button
                           onClick={() => handleDeleteDNSRecord(record)}
                           size="sm"
-                          color="red"
+                          color="yellow"
                         >
                           Delete
                         </Button>
@@ -201,7 +201,7 @@ function Dashboard() {
                   <td colSpan={TABLE_HEAD.length + 1} className="p-4">
                     <Typography
                       variant="small"
-                      color="blue-gray"
+                      color="black-gray"
                       className="font-normal"
                     >
                       No DNS records available.

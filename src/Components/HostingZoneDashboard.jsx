@@ -77,7 +77,7 @@ function HostingZoneDashboard() {
 
   return (
     <>
-      <Card className="h-full w-full">
+      <Card className="h-full w-full bg-orange-300">
         <CardHeader
           floated={false}
           shadow={false}
@@ -139,7 +139,7 @@ function HostingZoneDashboard() {
                       <Button
                         onClick={() => handleViewRecords(record.Id, record.Name)}
                         size="sm"
-                        color="red"
+                        color="yellow"
                       >
                         View Records
                       </Button>
@@ -165,7 +165,7 @@ function HostingZoneDashboard() {
           <Typography
             variant="h6"
             color="blue-gray"
-            className="font-medium mt-8 mb-4 text-center text-5xl text-deep-orange-300"
+            className="font-medium mt-8 mb-4 text-center text-5xl text-deep-blue-500"
           >
             Graphical Representation
           </Typography>
@@ -202,7 +202,7 @@ function HostingZoneDashboard() {
                   cx="50%"
                   cy="50%"
                   outerRadius={150}
-                  fill="#82ca9d"
+                  fill="#177666"
                   label
                 />
                 <Tooltip />
