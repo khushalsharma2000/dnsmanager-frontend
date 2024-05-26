@@ -8,10 +8,9 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
-import { useLocation , useParams} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const CreateDNSRecord = ({onSubmit, onClose }) => {
-  
+const CreateDNSRecord = ({ onSubmit, onClose }) => {
   const [recordType, setRecordType] = useState("");
   const [recordValue, setRecordValue] = useState("");
   const location = useLocation();
@@ -57,11 +56,10 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
         setRecordValue("");
     }
   };
-  
 
   const handleSubmit = () => {
     const newDNSRecord = {
-      domainName:title,
+      domainName: title,
       recordType,
       recordValue,
     };
@@ -71,7 +69,7 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
 
   return (
     <Popover
-      open={true} 
+      open={true}
       onClose={onClose}
       anchorOrigin={{
         vertical: "center",
@@ -82,7 +80,7 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
         horizontal: "center",
       }}
     >
-      <Box sx={{ p: 4 }}>
+      <Box sx={{ p: 4, position: "relative", width: "400px" }}>
         <IconButton
           edge="end"
           color="inherit"
@@ -90,8 +88,8 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
           aria-label="close"
           sx={{
             position: "absolute",
-            top: 0,
-            right: 0,
+            top: 8,
+            right: 8,
           }}
         >
           <CloseIcon />
@@ -107,7 +105,6 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
           id="domain-name"
           value={title}
           disabled
-          
         />
         <Typography variant="body1" gutterBottom>
           Record Type
@@ -127,7 +124,7 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
           <MenuItem value="SOA">SOA (Start of Authority) Record</MenuItem>
           <MenuItem value="SRV">SRV (Service) Record</MenuItem>
           <MenuItem value="TXT">TXT (Text) Record</MenuItem>
-        <MenuItem value="DNSSEC">DNSSEC</MenuItem>
+          <MenuItem value="DNSSEC">DNSSEC</MenuItem>
         </Select>
         <Typography variant="body1" gutterBottom>
           Record Value
@@ -138,9 +135,11 @@ const CreateDNSRecord = ({onSubmit, onClose }) => {
           value={recordValue}
           onChange={(e) => setRecordValue(e.target.value)}
         />
-        <Button variant="contained" onClick={handleSubmit}>
-          Create DNS Record
-        </Button>
+        <Box mt={2}>
+          <Button variant="contained" onClick={handleSubmit} fullWidth>
+            Create DNS Record
+          </Button>
+        </Box>
       </Box>
     </Popover>
   );

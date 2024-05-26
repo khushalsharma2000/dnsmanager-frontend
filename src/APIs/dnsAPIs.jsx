@@ -17,6 +17,7 @@ export async function listHostedZones(hostedZoneId) {
 export async function createDNSRecord(dnsRecordData, code) {
   try {
     const response = await DNSAPIs.post("/dns/create", { dnsRecordData, code });
+    console.log(response);
     return response.data;
   } catch (error) {
     throw new Error(error.message);

@@ -57,15 +57,17 @@ function Dashboard() {
     }
   };
 
-  const handleCreateOrUpdateDNSRecord = async (recordData, ttl) => {
+  const handleCreateOrUpdateDNSRecord = async (recordData,ttl) => {
     try {
-      if (recordToUpdate) {
+      console.log(ttl);
+       if (recordToUpdate) {
         
-        await updateDNSRecord(recordData, ttl, code);
+        const res =  await updateDNSRecord(recordData, ttl, code);
+        console.log(res);
         
       } else {
         await createDNSRecord(recordData, code);
-        window.location.reload();
+       
       }
       fetchDNSRecords();
       setIsCreateOrUpdateDNSRecordOpen(false);

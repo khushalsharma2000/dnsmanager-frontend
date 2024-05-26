@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const UserAPIs = axios.create({
     baseURL: "https://dnsmanager-backend-olzn.onrender.com"
+    // baseURL: "http://localhost:8080"
 })
 
 export async function userSignUp(signupData) {
